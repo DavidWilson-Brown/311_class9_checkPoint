@@ -1,0 +1,26 @@
+// recipes table
+// 3 columns: name, id, difficulty
+let x = req.body.name;
+let y = req.body.difficulty;
+
+
+INSERT INTO recipes(name, difficulty) 
+values(?, ?)
+let params = [x, y];
+
+// update recipe #1 set name to be mac and cheese and difficulty is hard
+UPDATE recipes 
+SET name = ?, difficulty = ?
+WHERE id = ?; 
+
+let params = [
+    x, y
+]
+
+
+let x = req.params.id;
+
+SELECT name FROM recipes
+WHERE id = ?;
+
+let params = [x]

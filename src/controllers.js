@@ -32,11 +32,13 @@ let getItem = function(req, res) {
 
     // use the sql statement and a db query to get an item by its ID
     let sql = "select id, description, done from todos where id = ?";
+    let params = [];
+    params.push(id);
 
     // use a db query to get the single item from the database
     // print an error message and the error status OR
     // print a success message and return the row of the item
-    db.query(sql, [], function(error, rows){
+    db.query(sql, params, function(error, rows){
         if(error) {
             console.log("Failed to get the todo item", error);
             res.sendStatus(500);
